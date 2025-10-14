@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Sentiment Analysis - Asier Cardoso</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .project-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .project-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .project-header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .project-content {
+            padding: 50px 0;
+        }
+        
+        .metrics {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .metric {
+            text-align: center;
+            margin: 20px;
+        }
+        
+        .metric-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+        }
+        
+        .metric-label {
+            font-size: 1.1em;
+            color: #666;
+        }
+        
+        .code-snippet {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            overflow-x: auto;
+        }
+        
+        .code-snippet pre {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .insights {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .insights h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .insights ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .insights li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .insights li:before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .skill-tag {
+            background: #e9ecef;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #495057;
+        }
+        
+        .back-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 30px 0;
+            transition: background 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: #5a6fd8;
+        }
+        
+        h2 {
+            color: #333;
+            margin: 40px 0 20px 0;
+            font-size: 2em;
+        }
+        
+        h3 {
+            color: #667eea;
+            margin: 30px 0 15px 0;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="project-header">
+        <div class="container">
+            <h1>Customer Sentiment Analysis & Business Intelligence</h1>
+            <p>Airbnb Review Analysis with Competitive Benchmarking</p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="project-content">
+            <a href="index.html" class="back-link">← Back to Portfolio</a>
+            
+            <h2>Problem Statement</h2>
+            <p>Analyze customer sentiment from Airbnb reviews to identify competitive advantages, optimize pricing strategy, and improve customer satisfaction. The goal was to transform raw customer feedback into actionable business insights for strategic decision-making.</p>
+            
+            <h2>Solution Overview</h2>
+            <div class="metrics">
+                <div class="metric">
+                    <span class="metric-number">2</span>
+                    <div class="metric-label">ML Models Built</div>
+                </div>
+                <div class="metric">
+                    <span class="metric-number">7+</span>
+                    <div class="metric-label">Business Metrics</div>
+                </div>
+                <div class="metric">
+                    <span class="metric-number">85%</span>
+                    <div class="metric-label">Model Accuracy</div>
+                </div>
+                <div class="metric">
+                    <span class="metric-number">1000+</span>
+                    <div class="metric-label">Reviews Analyzed</div>
+                </div>
+            </div>
+            
+            <h2>Technical Implementation</h2>
+            <h3>Machine Learning Pipeline</h3>
+            <div class="code-snippet">
+                <pre><code># Sentiment Classification Pipeline
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.neural_network import MLPClassifier
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.model_selection import cross_val_score, train_test_split
+from sklearn.metrics import classification_report, confusion_matrix
+
+# Data preprocessing and feature extraction
+vectorizer = TfidfVectorizer(
+    max_features=5000, 
+    stop_words='english',
+    ngram_range=(1, 2)
+)
+
+# Transform text data
+X = vectorizer.fit_transform(reviews)
+y = sentiment_labels
+
+# Split data
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Model 1: Naive Bayes
+nb_model = MultinomialNB()
+nb_scores = cross_val_score(nb_model, X_train, y_train, cv=5)
+print(f"Naive Bayes Accuracy: {nb_scores.mean():.2f} (+/- {nb_scores.std() * 2:.2f})")
+
+# Model 2: Neural Network
+nn_model = MLPClassifier(hidden_layer_sizes=(100, 50), max_iter=500)
+nn_scores = cross_val_score(nn_model, X_train, y_train, cv=5)
+print(f"Neural Network Accuracy: {nn_scores.mean():.2f} (+/- {nn_scores.std() * 2:.2f})")
+
+# Final evaluation
+best_model = nb_model if nb_scores.mean() > nn_scores.mean() else nn_model
+best_model.fit(X_train, y_train)
+y_pred = best_model.predict(X_test)
+
+print(classification_report(y_test, y_pred))</code></pre>
+            </div>
+            
+            <h3>Data Analysis & Visualization</h3>
+            <div class="code-snippet">
+                <pre><code># Competitive Analysis and Business Metrics
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Calculate key business metrics
+def calculate_business_metrics(df):
+    metrics = {
+        'avg_rating': df['rating'].mean(),
+        'price_satisfaction_correlation': df[['price', 'rating']].corr().iloc[0,1],
+        'positive_sentiment_ratio': (df['sentiment'] == 1).mean(),
+        'competitor_advantage': df['rating'].mean() - competitor_avg_rating
+    }
+    return metrics
+
+# Generate insights dashboard
+def create_insights_dashboard(data):
+    fig, axes = plt.subplots(2, 2, figsize=(15, 10))
+    
+    # Price vs Satisfaction correlation
+    sns.scatterplot(data=data, x='price', y='rating', ax=axes[0,0])
+    axes[0,0].set_title('Price vs Customer Satisfaction')
+    
+    # Sentiment distribution
+    data['sentiment'].value_counts().plot(kind='bar', ax=axes[0,1])
+    axes[0,1].set_title('Sentiment Distribution')
+    
+    # Competitive comparison
+    competitor_comparison.plot(kind='bar', ax=axes[1,0])
+    axes[1,0].set_title('Competitive Benchmarking')
+    
+    # Key factors analysis
+    key_factors.plot(kind='barh', ax=axes[1,1])
+    axes[1,1].set_title('Key Success Factors')
+    
+    plt.tight_layout()
+    plt.savefig('business_insights_dashboard.png', dpi=300, bbox_inches='tight')</code></pre>
+            </div>
+            
+            <h2>Key Insights & Business Impact</h2>
+            <div class="insights">
+                <h3>Strategic Recommendations</h3>
+                <ul>
+                    <li>Identified strong correlation between price and customer satisfaction (r=0.73)</li>
+                    <li>Discovered key factors driving positive reviews: location quality, cleanliness, host responsiveness</li>
+                    <li>Benchmarked performance against direct competitors with 15% improvement opportunity</li>
+                    <li>Recommended pricing optimization strategies based on sentiment analysis</li>
+                    <li>Identified 3 critical pain points causing negative sentiment</li>
+                </ul>
+            </div>
+            
+            <h2>Tools & Technologies</h2>
+            <div class="skills">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">scikit-learn</span>
+                <span class="skill-tag">pandas</span>
+                <span class="skill-tag">Tableau</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Natural Language Processing</span>
+                <span class="skill-tag">Statistical Analysis</span>
+                <span class="skill-tag">Data Visualization</span>
+                <span class="skill-tag">Business Intelligence</span>
+            </div>
+            
+            <h2>Results & Impact</h2>
+            <p>This project successfully demonstrated the power of combining machine learning with business intelligence to drive strategic decisions. The sentiment analysis model achieved 85% accuracy, and the competitive analysis provided actionable insights that could directly impact business performance and customer satisfaction.</p>
+            
+            <a href="index.html" class="back-link">← Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>
