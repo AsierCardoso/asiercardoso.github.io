@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molecular Dynamics Analytics - Asier Cardoso</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .project-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .project-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .project-header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .project-content {
+            background: white;
+            margin: -40px auto 0;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .metric {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .metric-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .code-snippet {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .code-snippet pre {
+            margin: 0;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .plots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .plot-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .plot-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 20px 0;
+            transition: background 0.3s;
+        }
+        
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        
+        h2 {
+            color: #2d3748;
+            margin: 40px 0 20px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #4a5568;
+            margin: 25px 0 15px;
+        }
+        
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .confidential-notice {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-left: 4px solid #dc3545;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .methodology {
+            background: #d1ecf1;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="project-header">
+        <h1><i class="fas fa-atom"></i> Molecular Dynamics Analytics</h1>
+        <p>Automated Analysis of DNA Assembly Simulations</p>
+    </div>
+    
+    <div class="container">
+        <div class="project-content">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+            
+            <div class="confidential-notice">
+                <strong><i class="fas fa-lock"></i> Confidential Research Project</strong><br>
+                This project involves proprietary research data and methodologies. Specific implementation details and raw data have been anonymized for portfolio purposes.
+            </div>
+            
+            <h2>Research Overview</h2>
+            <p>Developed automated pipelines for analyzing coarse-grained DNA assembly simulations using LAMMPS molecular dynamics. This project focused on understanding the thermodynamic and rheological properties of self-assembling DNA nanostructures under different interaction parameters.</p>
+            
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-number">50+</div>
+                    <div>Simulation Conditions</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">8</div>
+                    <div>Visualization Types</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">100%</div>
+                    <div>Automated Pipeline</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">3</div>
+                    <div>Research Papers</div>
+                </div>
+            </div>
+            
+            <h2>Key Research Areas</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3><i class="fas fa-chart-line"></i> Rheological Analysis</h3>
+                    <p>Implemented Green-Kubo relations for calculating storage (G') and loss (G'') moduli from stress autocorrelation functions, enabling characterization of viscoelastic properties.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><i class="fas fa-cogs"></i> Parameter Optimization</h3>
+                    <p>Systematic study of interaction strength (ε) and angular rigidity (k) parameters across multiple simulation conditions to understand assembly behavior.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><i class="fas fa-chart-bar"></i> Statistical Validation</h3>
+                    <p>Comprehensive statistical analysis with bootstrap confidence intervals and cross-validation to ensure robust scientific conclusions.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><i class="fas fa-microscope"></i> Structural Analysis</h3>
+                    <p>Cluster analysis and radial distribution function calculations to understand the relationship between molecular structure and material properties.</p>
+                </div>
+            </div>
+            
+            <h2>Technical Implementation</h2>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">NumPy</span>
+                <span class="tech-tag">SciPy</span>
+                <span class="tech-tag">Matplotlib</span>
+                <span class="tech-tag">LAMMPS</span>
+                <span class="tech-tag">Statistical Physics</span>
+                <span class="tech-tag">Green-Kubo Relations</span>
+                <span class="tech-tag">Molecular Dynamics</span>
+                <span class="tech-tag">Data Visualization</span>
+                <span class="tech-tag">Scientific Computing</span>
+            </div>
+            
+            <h3>Methodology Overview</h3>
+            <div class="methodology">
+                <h4>1. Simulation Setup</h4>
+                <ul>
+                    <li>Coarse-grained bead-spring model for DNA building blocks</li>
+                    <li>Lennard-Jones interactions with tunable parameters</li>
+                    <li>Harmonic angle potentials for structural flexibility</li>
+                </ul>
+                
+                <h4>2. Data Processing Pipeline</h4>
+                <ul>
+                    <li>Automated SACF (Stress Autocorrelation Function) analysis</li>
+                    <li>Green-Kubo integration for rheological properties</li>
+                    <li>Statistical validation with bootstrap methods</li>
+                </ul>
+                
+                <h4>3. Visualization & Analysis</h4>
+                <ul>
+                    <li>Publication-ready scientific plots</li>
+                    <li>Parameter space exploration</li>
+                    <li>Cross-validation and error analysis</li>
+                </ul>
+            </div>
+            
+            <h2>Research Results & Visualizations</h2>
+            <div class="plots-grid">
+                <div class="plot-card">
+                    <div class="plot-placeholder">
+                        <i class="fas fa-chart-line fa-2x"></i>
+                    </div>
+                    <h4>Rheological Moduli</h4>
+                    <p>Storage (G') and loss (G'') moduli as a function of frequency, showing viscoelastic behavior</p>
+                </div>
+                
+                <div class="plot-card">
+                    <div class="plot-placeholder">
+                        <i class="fas fa-chart-area fa-2x"></i>
+                    </div>
+                    <h4>Parameter Space Analysis</h4>
+                    <p>Systematic exploration of interaction strength vs. angular rigidity effects</p>
+                </div>
+                
+                <div class="plot-card">
+                    <div class="plot-placeholder">
+                        <i class="fas fa-chart-scatter fa-2x"></i>
+                    </div>
+                    <h4>Crossover Points</h4>
+                    <p>Frequency and modulus at the liquid-solid transition point</p>
+                </div>
+                
+                <div class="plot-card">
+                    <div class="plot-placeholder">
+                        <i class="fas fa-chart-bar fa-2x"></i>
+                    </div>
+                    <h4>Cluster Analysis</h4>
+                    <p>Size distribution and connectivity analysis of molecular assemblies</p>
+                </div>
+                
+                <div class="plot-card">
+                    <div class="plot-placeholder">
+                        <i class="fas fa-chart-pie fa-2x"></i>
+                    </div>
+                    <h4>Statistical Validation</h4>
+                    <p>Bootstrap confidence intervals and error analysis</p>
+                </div>
+                
+                <div class="plot-card">
+                    <div class="plot-placeholder">
+                        <i class="fas fa-chart-heatmap fa-2x"></i>
+                    </div>
+                    <h4>Heatmap Analysis</h4>
+                    <p>Comprehensive parameter space visualization</p>
+                </div>
+            </div>
+            
+            <h2>Key Technical Achievements</h2>
+            <ul>
+                <li>Implemented <strong>Green-Kubo relations</strong> for accurate rheological property calculations</li>
+                <li>Built <strong>statistical validation framework</strong> with bootstrap confidence intervals</li>
+                <li>Created <strong>publication-ready visualizations</strong> with consistent formatting and units</li>
+                <li>Established <strong>reproducible research workflows</strong> for scientific computing</li>
+                <li>Developed <strong>automated analysis pipelines</strong> for high-throughput simulation data</li>
+                <li>Applied <strong>advanced statistical methods</strong> for robust scientific conclusions</li>
+            </ul>
+            
+            <h2>Research Impact</h2>
+            <p>This research contributes to the understanding of DNA-based materials and their mechanical properties. The automated analysis framework enables rapid screening of design parameters for DNA nanostructures, potentially accelerating the development of novel biomaterials with tailored properties.</p>
+            
+            <div class="highlight">
+                <h3>Publication & Collaboration</h3>
+                <p>This work is part of ongoing research collaboration with the Karlsruhe Institute of Technology (KIT), focusing on the development of predictive models for DNA assembly behavior and material properties.</p>
+            </div>
+            
+            <h2>Tools & Technologies</h2>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">NumPy</span>
+                <span class="tech-tag">SciPy</span>
+                <span class="tech-tag">Matplotlib</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">LAMMPS</span>
+                <span class="tech-tag">Linux</span>
+                <span class="tech-tag">Git</span>
+                <span class="tech-tag">Jupyter</span>
+                <span class="tech-tag">Scientific Computing</span>
+            </div>
+            
+            <h2>Skills Demonstrated</h2>
+            <ul>
+                <li><strong>Scientific Computing:</strong> Advanced numerical methods and statistical analysis</li>
+                <li><strong>Data Visualization:</strong> Publication-quality scientific plots and figures</li>
+                <li><strong>Automation:</strong> High-throughput data processing pipelines</li>
+                <li><strong>Research Methodology:</strong> Rigorous statistical validation and error analysis</li>
+                <li><strong>Collaboration:</strong> Academic research environment and publication standards</li>
+                <li><strong>Problem Solving:</strong> Complex multi-parameter optimization challenges</li>
+            </ul>
+            
+            <div style="text-align: center; margin: 40px 0;">
+                <div class="confidential-notice" style="text-align: left;">
+                    <strong><i class="fas fa-info-circle"></i> Note:</strong> Due to the confidential nature of this research project, specific implementation details, raw data, and proprietary methodologies have been anonymized. The technical skills and achievements demonstrated are representative of the actual work performed.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
