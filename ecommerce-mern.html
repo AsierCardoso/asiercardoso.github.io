@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce MERN Stack - Asier Cardoso</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .project-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .project-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .project-header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .project-content {
+            background: white;
+            margin: -40px auto 0;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .metric {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .metric-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .code-snippet {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .code-snippet pre {
+            margin: 0;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 20px 0;
+            transition: background 0.3s;
+        }
+        
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        
+        h2 {
+            color: #2d3748;
+            margin: 40px 0 20px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #4a5568;
+            margin: 25px 0 15px;
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .architecture-diagram {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: center;
+            font-family: monospace;
+        }
+        
+        .endpoint {
+            background: #e8f5e9;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: monospace;
+            border-left: 4px solid #4caf50;
+        }
+    </style>
+</head>
+<body>
+    <div class="project-header">
+        <h1><i class="fas fa-shopping-cart"></i> E-Commerce Web Application</h1>
+        <p>Full-Stack MERN Platform with Modern Web Technologies</p>
+    </div>
+    
+    <div class="container">
+        <div class="project-content">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+            
+            <h2>Project Overview</h2>
+            <p>A modern, responsive e-commerce web application built with the MERN stack (MongoDB, Express.js, React.js, Node.js) featuring user authentication, product management, and a seamless shopping experience.</p>
+            
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-number">MERN</div>
+                    <div>Full-Stack Stack</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">100%</div>
+                    <div>Responsive Design</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">CRUD</div>
+                    <div>Complete Operations</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">Firebase</div>
+                    <div>Authentication</div>
+                </div>
+            </div>
+            
+            <h2>Key Highlights</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3><i class="fas fa-rocket"></i> Full-Stack Development</h3>
+                    <p>Modern web technologies with React.js frontend and Express.js backend, providing a seamless user experience.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><i class="fas fa-lock"></i> Secure Authentication</h3>
+                    <p>Firebase Auth integration with Express.js session management for secure user authentication and protected routes.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><i class="fas fa-mobile-alt"></i> Responsive Design</h3>
+                    <p>Bootstrap-powered responsive design that works perfectly on mobile, tablet, and desktop devices.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><i class="fas fa-tasks"></i> Complete CRUD</h3>
+                    <p>Full product management with Create, Read, Update, and Delete operations for comprehensive e-commerce functionality.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><i class="fas fa-upload"></i> File Upload System</h3>
+                    <p>Multer integration for image uploads with validation, size limits, and multiple file format support.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><i class="fas fa-paint-brush"></i> Modern UI/UX</h3>
+                    <p>Intuitive user interface with interactive components, loading states, and comprehensive error handling.</p>
+                </div>
+            </div>
+            
+            <h2>Features</h2>
+            
+            <h3><i class="fas fa-shield-alt"></i> Authentication & Security</h3>
+            <ul>
+                <li>User registration and login with Firebase Auth</li>
+                <li>Express.js session management</li>
+                <li>Protected routes and middleware</li>
+                <li>Password encryption and validation</li>
+            </ul>
+            
+            <h3><i class="fas fa-shopping-bag"></i> Product Management</h3>
+            <ul>
+                <li>Create new products with image upload</li>
+                <li>Read product listings with search and filtering</li>
+                <li>Update product information and inventory</li>
+                <li>Delete products with confirmation</li>
+            </ul>
+            
+            <h3><i class="fas fa-palette"></i> User Interface</h3>
+            <ul>
+                <li>Responsive design for mobile, tablet, and desktop</li>
+                <li>Bootstrap components for consistent styling</li>
+                <li>Interactive product cards and navigation</li>
+                <li>Loading states and error handling</li>
+            </ul>
+            
+            <h3><i class="fas fa-folder-open"></i> File Management</h3>
+            <ul>
+                <li>Image upload functionality with Multer</li>
+                <li>File validation and size limits</li>
+                <li>Image optimization and storage</li>
+                <li>Multiple file format support</li>
+            </ul>
+            
+            <h2>Tech Stack</h2>
+            
+            <h3>Frontend</h3>
+            <div class="tech-stack">
+                <span class="tech-tag">React.js</span>
+                <span class="tech-tag">Bootstrap</span>
+                <span class="tech-tag">JavaScript (ES6+)</span>
+                <span class="tech-tag">HTML5/CSS3</span>
+            </div>
+            
+            <h3>Backend</h3>
+            <div class="tech-stack">
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express.js</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">Mongoose</span>
+            </div>
+            
+            <h3>Authentication & Services</h3>
+            <div class="tech-stack">
+                <span class="tech-tag">Firebase Auth</span>
+                <span class="tech-tag">Multer</span>
+                <span class="tech-tag">Express Sessions</span>
+                <span class="tech-tag">CORS</span>
+            </div>
+            
+            <h3>Development Tools</h3>
+            <div class="tech-stack">
+                <span class="tech-tag">Git</span>
+                <span class="tech-tag">npm</span>
+                <span class="tech-tag">VS Code</span>
+            </div>
+            
+            <h2>Architecture</h2>
+            <div class="architecture-diagram">
+                <pre style="text-align: left; display: inline-block;">
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Frontend      │    │   Backend       │    │   Database      │
+│   (React.js)    │◄──►│   (Express.js)  │◄──►│   (MongoDB)     │
+│                 │    │                 │    │                 │
+│ • Components    │    │ • REST APIs     │    │ • Products      │
+│ • State Mgmt    │    │ • Middleware    │    │ • Users         │
+│ • Routing       │    │ • Auth          │    │ • Sessions      │
+│ • UI/UX         │    │ • File Upload   │    │ • File Storage  │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+                </pre>
+            </div>
+            
+            <h2>Installation & Setup</h2>
+            
+            <h3>Prerequisites</h3>
+            <ul>
+                <li>Node.js (v14 or higher)</li>
+                <li>MongoDB (local or cloud)</li>
+                <li>Firebase project setup</li>
+                <li>Git</li>
+            </ul>
+            
+            <h3>Setup Instructions</h3>
+            <div class="code-snippet">
+                <pre><code># Clone the repository
+git clone https://github.com/AsierCardoso/tienda-dawe-react.git
+cd tienda-dawe-react
+
+# Install backend dependencies
+cd backend
+npm install
+
+# Install frontend dependencies
+cd ../frontend
+npm install</code></pre>
+            </div>
+            
+            <h3>Environment Configuration</h3>
+            <div class="code-snippet">
+                <pre><code># Backend .env file
+MONGODB_URI=mongodb://localhost:27017/ecommerce
+FIREBASE_API_KEY=your_firebase_api_key
+FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+SESSION_SECRET=your_session_secret
+PORT=5000</code></pre>
+            </div>
+            
+            <h3>Start the Application</h3>
+            <div class="code-snippet">
+                <pre><code># Start backend server
+cd backend
+npm run dev
+
+# Start frontend (in new terminal)
+cd frontend
+npm start</code></pre>
+            </div>
+            
+            <h2>Usage</h2>
+            
+            <h3>For Users</h3>
+            <ul>
+                <li><strong>Register/Login:</strong> Create an account or sign in</li>
+                <li><strong>Browse Products:</strong> View available products with search and filters</li>
+                <li><strong>Product Details:</strong> Click on products for detailed information</li>
+                <li><strong>Shopping Cart:</strong> Add items to cart and proceed to checkout</li>
+            </ul>
+            
+            <h3>For Administrators</h3>
+            <ul>
+                <li><strong>Product Management:</strong> Add, edit, or delete products</li>
+                <li><strong>Image Upload:</strong> Upload product images with validation</li>
+                <li><strong>Inventory Control:</strong> Manage stock levels and product information</li>
+                <li><strong>User Management:</strong> View and manage user accounts</li>
+            </ul>
+            
+            <h2>Key Learning Outcomes</h2>
+            <ul>
+                <li><strong>Full-Stack Development:</strong> End-to-end web application development</li>
+                <li><strong>Database Design:</strong> MongoDB schema design and optimization</li>
+                <li><strong>API Development:</strong> RESTful API design and implementation</li>
+                <li><strong>Authentication:</strong> Secure user authentication and session management</li>
+                <li><strong>File Handling:</strong> Image upload and file management systems</li>
+                <li><strong>Responsive Design:</strong> Mobile-first approach with Bootstrap</li>
+                <li><strong>State Management:</strong> React state management and data flow</li>
+                <li><strong>Error Handling:</strong> Comprehensive error handling and validation</li>
+            </ul>
+            
+            <h2>Development Process</h2>
+            <ol>
+                <li><strong>Planning & Design:</strong> Wireframes and database schema</li>
+                <li><strong>Backend Development:</strong> API endpoints and database integration</li>
+                <li><strong>Frontend Development:</strong> React components and user interface</li>
+                <li><strong>Authentication:</strong> Firebase integration and session management</li>
+                <li><strong>File Upload:</strong> Multer implementation and image handling</li>
+                <li><strong>Testing & Debugging:</strong> Comprehensive testing and bug fixes</li>
+                <li><strong>Deployment:</strong> Production deployment and optimization</li>
+            </ol>
+            
+            <h2>Future Enhancements</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3><i class="fas fa-credit-card"></i> Payment Gateway</h3>
+                    <p>Integration with Stripe or PayPal for secure payment processing.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><i class="fas fa-search"></i> Advanced Search</h3>
+                    <p>Enhanced search and filtering capabilities for better product discovery.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><i class="fas fa-star"></i> Reviews & Ratings</h3>
+                    <p>User reviews and ratings system for products.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><i class="fas fa-shopping-cart"></i> Order Management</h3>
+                    <p>Complete order management system with tracking and history.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><i class="fas fa-chart-line"></i> Admin Dashboard</h3>
+                    <p>Comprehensive admin dashboard for analytics and management.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><i class="fas fa-envelope"></i> Email Notifications</h3>
+                    <p>Automated email notifications for orders and updates.</p>
+                </div>
+            </div>
+            
+            <h2>Impact & Results</h2>
+            <p>This e-commerce application demonstrates comprehensive full-stack development skills, including modern web technologies, secure authentication, and efficient database management. The project showcases the ability to build scalable, responsive web applications with a focus on user experience and best practices.</p>
+            
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="https://github.com/AsierCardoso/tienda-dawe-react" target="_blank" class="back-link">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <footer style="background: #2c3e50; color: white; text-align: center; padding: 30px 0;">
+        <div class="container">
+            <p style="margin: 0;">&copy; 2025 Asier Cardoso. All rights reserved.</p>
+            <p style="margin: 10px 0 0 0;">
+                <a href="mailto:asiercmonasterio@gmail.com" style="color: white; text-decoration: none; margin: 0 15px;"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://linkedin.com/in/asiercardoso" style="color: white; text-decoration: none; margin: 0 15px;"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/AsierCardoso" style="color: white; text-decoration: none; margin: 0 15px;"><i class="fab fa-github"></i> GitHub</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
+
