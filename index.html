@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asier Cardoso - Data Scientist Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        .hero h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .hero p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section:last-of-type {
+            padding-top: 20px;
+        }
+        
+        .section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #333;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .section:last-of-type .project-grid {
+            margin-top: 10px;
+        }
+        
+        .project-card {
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .project-card p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        .project-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+        }
+        
+        .project-link:hover {
+            background: #5a6fd8;
+        }
+        
+        .contact {
+            background: #f8f9fa;
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .contact-link {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-link:hover {
+            color: #5a6fd8;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <h1>Asier Cardoso</h1>
+            <h2>Data Scientist & Analyst</h2>
+            <p>Passionate about economics and applying data science to financial markets and business optimization.</p>
+            <div class="skills">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Tableau</span>
+                <span class="skill-tag">Statistics</span>
+                <span class="skill-tag">Data Visualization</span>
+                <span class="skill-tag">Business Intelligence</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3><i class="fas fa-chart-line"></i> Customer Sentiment Analysis</h3>
+                    <p>Built ML pipeline for Airbnb review analysis with competitive benchmarking. Achieved 91% precision using Random Forest and generative AI models (Ollama Gemma2:2b).</p>
+                    <p><strong>Impact:</strong> Identified pricing-satisfaction correlations and actionable insights for business optimization.</p>
+                    <a href="sentiment-analysis-english.html" class="project-link">View Project →</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3><i class="fas fa-brain"></i> ML Predictive Analytics for Complex Systems</h3>
+                    <p>Machine Learning pipeline for rapid parameter space exploration and predictive modeling. Achieved 6.12% mean error with R² > 99% in cross-validation, reducing exploration time from 6 months to 1 day (10,000× speedup).</p>
+                    <p><strong>Impact:</strong> Performance at the fundamental limit of predictability, enabling rapid hypothesis testing and experimental design optimization.</p>
+                    <a href="molecular-dynamics-ml-summary.html" class="project-link">View Project →</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3><i class="fas fa-shopping-cart"></i> E-Commerce Web Application</h3>
+                    <p>Full-stack MERN platform with Express sessions, file upload system, and responsive design. Complete CRUD operations for product management with user authentication.</p>
+                    <p><strong>Impact:</strong> Modern e-commerce solution with secure authentication and comprehensive product management system.</p>
+                    <a href="ecommerce-mern.html" class="project-link">View Project →</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3><i class="fas fa-mobile-alt"></i> SHAREYOURTIME Android App</h3>
+                    <p>Comprehensive time management app with Firebase authentication, Google Maps integration, and modern Android architecture. Features alarms, timers, world clock, and user profiles.</p>
+                    <p><strong>Impact:</strong> Full-featured productivity app with secure authentication and location-based features for efficient time management.</p>
+                    <a href="shareyourtime.html" class="project-link">View Project →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="container">
+            <div class="project-grid">
+                <div class="project-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none;">
+                    <h3 style="color: white; margin-bottom: 10px;"><i class="fas fa-handshake"></i> Want to develop a project together?</h3>
+                    <p style="color: rgba(255,255,255,0.9); margin-bottom: 15px;"><strong>If you want your project to appear here or develop something together, contact me!</strong></p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 10px;">
+                        <a href="mailto:asiercmonasterio@gmail.com" style="background: white; color: #667eea; padding: 10px 20px; text-decoration: none; border-radius: 25px; display: inline-block; transition: transform 0.3s ease;">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                        <a href="https://linkedin.com/in/asiercardoso" target="_blank" style="background: white; color: #667eea; padding: 10px 20px; text-decoration: none; border-radius: 25px; display: inline-block; transition: transform 0.3s ease;">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/AsierCardoso" target="_blank" style="background: white; color: #667eea; padding: 10px 20px; text-decoration: none; border-radius: 25px; display: inline-block; transition: transform 0.3s ease;">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer style="background: #2c3e50; color: white; text-align: center; padding: 30px 0;">
+        <div class="container">
+            <p style="margin: 0;">&copy; 2025 Asier Cardoso. All rights reserved.</p>
+            <p style="margin: 10px 0 0 0;">
+                <a href="mailto:asiercmonasterio@gmail.com" style="color: white; text-decoration: none; margin: 0 15px;"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://linkedin.com/in/asiercardoso" style="color: white; text-decoration: none; margin: 0 15px;"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/AsierCardoso" style="color: white; text-decoration: none; margin: 0 15px;"><i class="fab fa-github"></i> GitHub</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
